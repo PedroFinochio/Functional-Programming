@@ -20,8 +20,8 @@ vendas 7 = 30
 
 --Função que retorna uma lista de vendas
 listaVendas::Int->[Int]
-listaVendas 0 = [0]
-listaVendas d = 
+listaVendas (-1) = []
+listaVendas d = vendas d : listaVendas d
 
 {- 02 função que retorna [[Int]] com listas de dia e venda -}
 
