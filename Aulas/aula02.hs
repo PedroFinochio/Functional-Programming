@@ -62,9 +62,3 @@ myPenultimate (a:x) = myPenultimate x
 myInit::[Int]->[Int]
 myInit [a] = [] 
 myInit (a:x) = a : myInit x 
-
-
-
-
-
-

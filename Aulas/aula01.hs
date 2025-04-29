@@ -43,9 +43,3 @@ maiorVenda02 x y
   |otherwise = maiorVenda02 (x-1) y
 
 
-{-Exercício - inclua em suas funções um contador para informar quantos testes
-  a função executa. Isso é o mesmo que comprovar a complexidade
-  Considere, neste caso, contar os testes nas funções que são chamadas internamente
--}
-
-
