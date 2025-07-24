@@ -1,64 +1,58 @@
-{-Assunto: Listas
-  Os conceitos introdutórios sobre listas foram apresentados em sala.
-  Agora, considerando os casos mais simples, com apenas listas de inteiros,
-  implemente as funções abaixo, considerando os operadores ++ e :
-    ++ (concatena listas)
-     : (insere um elemento na lista)
--}
-     
---Função que soma os elementos de uma lista
+{- 01 função que soma os elementos de uma lista -}
 sumList::[Int]->Int
 sumList [] = 0
-sumList (a:x) = a + sumList x
+sumList (h:t) = h + sumList t
 
---Função que localiza um elemento na lista
+{- 02-localiza elemento em lista -}
 searchList::Int->[Int]->Bool
 searchList _ [] = False
-searchList e (a:x)
-    | e == a = True
-    | otherwise = searchList e x 
+searchList x (h:t)
+    | x == h = True
+    | otherwise = searchList x t
 
---Função que remove todas as ocorrencias de y em uma lista
+{-03 remove todas ocorrências de y em uma lista -}
+deleteList::Int->[Int]->[Int]
+deleteList _ [] = []
+deleteList y (h:t)
+    | y == h = deleteList y t
+    | otherwise = h : deleteList y t 
 
-
---Função que informa o tamanho de uma lista
+{-04 informa o tamanho de uma lista -}
 lenghtList::[Int]->Int
 lenghtList [] = 0
-lenghtList (a:x) = 1 + lenghtList x
+lenghtList (h:t) = 1 + lenghtList t
 
---Função que conta a ocorrencia de um Int em [Int]
+{-05 conta a ocorrência de um Int em [Int] -}
 contList::Int->[Int]->Int
 contList _ [] = 0
-contList c (a:x)
-    | c == a = 1 + contList c x
-    | otherwise = contList c x
+contList y (h:t)
+    | y == h = 1 + contList y t
+    | otherwise = contList y t
 
---Função que inverte uma lista
+{- 06 inverte a lista -}
 reverseList:: [Int]->[Int]
 reverseList [] = []
-reverseList (a:x) = reverseList x ++ [a] 
+reverseList (h:t) = reverseList t ++ [h]
 
---Função que inverte elementos das listas internas 
+{- Exercícios
+     Implementar as funções: 
+       myHead que recebe uma lista x e retorna a cabeça de x
+       myTail que recebe uma lista x e retorna a lista x sem a cabeça
+       myLast que recebe uma lista x e retorna o último elemento de x
+       myInit que recebe uma lista x e retorna a lista x sem o último elemento
+-}
 
---Função myHead que recebe uma lista x e retorna a cabeça de x
 myHead::[Int]->Int
-myHead (a:x) = a
+myHead (h:t) = h
 
---Função myTail que recebe uma lista x e retorna a lista x sem a cabeça
 myTail::[Int]->[Int]
-myTail (a:x) = (x)
+myTail [] = []
+myTail (h:t) = t
 
---Função myLast que recebe uma lista x e retorna o último elemento de x
 myLast::[Int]->Int
-myLast [a] = a
-myLast (a:x) = myLast (x)
+myLast [h] = h
+myLast (h:t) = myLast t
 
---Função myPenultimate que recebe uma lista x e retorna o penúltimo elemento de x
-myPenultimate::[Int]->Int
-myPenultimate [a,b] = a
-myPenultimate (a:x) = myPenultimate x 
-
---Função myInit que recebe uma lista x e retorna a lista x sem o último elemento
 myInit::[Int]->[Int]
-myInit [a] = [] 
-myInit (a:x) = a : myInit x 
+myInit [a,c] = [a]
+myInit (h:t) = h : myInit t
