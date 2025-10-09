@@ -76,14 +76,14 @@ ghci> take 10 (cycle [1,2,3])
 -}
 
 -- Crie uma função minhaIdade, que dado uma lista com o ano do seu nascimento até 2025, retorna sua idade
-
+minhaIdade l = 2025 - sum l
 
 --Crie uma lista com os números de 1 a 50 e depois pegue apenas os 10 elementos centrais
 
 
 --Crie uma função que receba uma palavra e devolva a palavra seguida de sua versão invertida
 
-invertida l
+
 
 
 
