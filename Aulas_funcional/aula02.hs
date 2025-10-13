@@ -87,6 +87,31 @@ centrais l = take 10 (drop 20 l)
 inversa::String->String
 inversa p = p ++ reverse p 
 
+-- Crie uma lista com 5 notas (de 0 a 10), calcule a média e mostre se o aluno foi aprovado (>=6) ou reprovado
+aprovado::[Int]->String
+aprovado l = if sum l `div` length l >= 6
+    then "Aprovado"
+    else "Reprovado"  
+
+-- Crie duas listas, uma com nomes de jogadores e outra com seus números de camisa. Use zip para associar cada
+-- jogador ao número correspondente 
+jogadores::[String]->[Int]->[(String,Int)]
+jogadores x y = zip x y 
+
+{- DESAFIO: Crie uma função chamada dobreCadaOutro. A função deve dobrar todos os números alternados, começando
+da direita para a esquerda. 
+
+Ex: 
+dobreCadaOutro [8,7,6,5] == [16,7,12,5]
+dobreCadaOutro [1,2,3] == [2,2,6]
+
+-}
+
+
+
+
+
+
 
 
 
