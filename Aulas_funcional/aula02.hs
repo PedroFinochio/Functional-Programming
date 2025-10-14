@@ -103,11 +103,20 @@ da direita para a esquerda.
 
 Ex: 
 dobreCadaOutro [8,7,6,5] == [16,7,12,5]
-dobreCadaOutro [1,2,3] == [2,2,6]
+dobreCadaOutro [1,2,3] == [1,4,3]
 
 -}
 
+dobreCadaOutro::[Int]->[Int]
+dobreCadaOutro l = reverse (zipWith (*) (take (length l) (cycle[1,2])) (reverse l))
 
+{- Exemplo de funcionamento :
+
+[8,7,6,5] -> aplica a função de (*) a [1,2,1,2] e [5,6,7,8]
+-> [5,12,7,16]
+invertendo a lista -> [16,7,12,5]
+
+-}
 
 
 
