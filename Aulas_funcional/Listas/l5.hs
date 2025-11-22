@@ -103,7 +103,7 @@ numMasculino rg = length [() | (_, _, sexo) <- [pessoa i | i <- [1..rg]], sexo =
 registroMaiorIdade::Int->Int
 registroMaiorIdade rg = head [i | i <- [1..rg], let (_, idade, _) = pessoa i, idade == maximum [idade | j <- [1..rg], let (_, idade, _) = pessoa j]]
 
-
+    
     
 
 
